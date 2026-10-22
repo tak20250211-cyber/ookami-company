@@ -4,189 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PinShare — 行ってよかった場所を、地図に残す写真SNS</title>
-<meta name="description" content="押すだけで盛れる写真加工と、行った場所が育つ私だけの地図。家バレせずに載せられる「仮想シティ」も。iPhone向けに公開中、Android版は準備中です。">
+<meta name="description" content="同じ趣味のピン友と今日の1枚を見せ合い、行った場所が地図に育つ。盛れる加工もアプリの中で全部。iPhone 向けに無料で公開中。">
 <link rel="canonical" href="https://ookamicompany.com/pinshare/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PinShare — 行ってよかった場所を、地図に残す写真SNS">
-<meta property="og:description" content="押すだけで盛れる写真加工と、行った場所が育つ私だけの地図。">
+<meta property="og:description" content="今入ると得。好きな @ID は早い者勝ち、創設メンバーのバッジ、投稿を売れる日が来たら手数料 0%（予定）。">
 <meta property="og:url" content="https://ookamicompany.com/pinshare/">
-<meta property="og:image" content="https://ookamicompany.com/pinshare/img/shot-beauty.jpg">
+<meta property="og:image" content="https://ookamicompany.com/pinshare/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f27a9e">
 <style>
-  :root{
-    /* アプリの「カラフル」きせかえと同じ色。夜空に色の玉が浮かんでいる感じ */
-    --night:#0a0a18; --night2:#05050f;
-    --blue:#2a8cf2; --red:#f23340; --amber:#ffb226; --green:#40d973; --purple:#bf4df2; --cyan:#26e6d9;
-    --ink:#1b1440; --muted:#6a6785; --line:#e8e6f0; --card:#ffffff;
-    --radius:22px;
-  }
+  :root{--rose:#f27a9e;--berry:#e63f6d;--blush:#fde2ea;--pink:#fbd0dd;--ink:#1b1440;--sub:#6a6785;--line:#f1dbe3;--card:#fff;--radius:22px}
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;
-       color:var(--ink);background:#fbfaff;line-height:1.85;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
-  a{color:#2a5cf2}
-
-  /* ヒーロー：夜空に色の玉 */
-  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--night),var(--night2));
-        color:#fff;padding:64px 0 72px;text-align:center}
-  .orb{position:absolute;border-radius:50%;filter:blur(6px);opacity:.75;pointer-events:none}
-  .hero h1{font-size:clamp(1.9rem,5.4vw,2.9rem);margin:0 0 10px;letter-spacing:.02em;position:relative}
-  .hero p.lead{font-size:clamp(1rem,2.6vw,1.15rem);color:#d9d6f2;margin:0 auto 30px;max-width:30em;position:relative}
-  .logo{display:inline-block;font-weight:800;letter-spacing:.14em;font-size:.78rem;color:#a9a4d8;
-        border:1px solid #3a3566;border-radius:999px;padding:5px 14px;margin-bottom:20px;position:relative}
-
-  /* ダウンロード */
-  .dl{position:relative;display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:6px}
-  .badges{display:flex;flex-direction:column;gap:12px;align-items:stretch;min-width:232px}
-  .badge{display:flex;align-items:center;gap:12px;background:#fff;color:#12102b;text-decoration:none;
-         border-radius:16px;padding:12px 20px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.35);
-         transition:transform .15s ease}
-  .badge:hover{transform:translateY(-2px)}
-  .badge small{display:block;font-weight:500;font-size:.72rem;color:#6a6785;line-height:1.3}
-  .badge.soon{background:rgba(255,255,255,.12);color:#cfcbea;box-shadow:none;cursor:default}
-  .badge.soon small{color:#a9a4d8}
-  .badge svg{flex:0 0 auto}
-  .qr{background:#fff;border-radius:18px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.35);text-align:center}
-  .qr svg{display:block;width:132px;height:132px}
-  .qr span{display:block;font-size:.72rem;color:#6a6785;margin-top:8px;font-weight:600}
-
-  /* 中身 */
-  section{padding:56px 0}
-  h2{font-size:clamp(1.25rem,3.4vw,1.6rem);margin:0 0 6px}
-  .sub{color:var(--muted);margin:0 0 30px}
-  .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-  .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 24px}
-  .feat h3{margin:0 0 6px;font-size:1.02rem;display:flex;align-items:center;gap:9px}
-  .feat p{margin:0;color:#4a4767;font-size:.93rem}
-  .dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
-
-  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:8px}
-  .shots figure{margin:0}
-  .shots img{width:100%;border-radius:var(--radius);border:1px solid var(--line);display:block}
-  .shots figcaption{font-size:.85rem;color:var(--muted);margin-top:9px;text-align:center}
-
-  .safe{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px}
-  .safe ul{margin:10px 0 0;padding-left:1.2em}
-  .safe li{font-size:.93rem;color:#4a4767;margin-bottom:6px}
-
-  footer{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--muted);font-size:.86rem}
-  footer a{color:var(--muted)}
-  @media (prefers-color-scheme: dark){
-    body{background:#0e0d1a;color:#eceaf7}
-    .feat,.safe,.qr{background:#181630;border-color:#2b2850}
-    .feat p,.safe li{color:#c3c0dd}
-    .shots img{border-color:#2b2850}
-    footer{border-color:#2b2850}
-  }
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;color:var(--ink);background:#fff7fa;line-height:1.8;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--berry)}
+  .hero{background:linear-gradient(180deg,#ffe3ec 0%,#fff7fa 100%);padding:36px 0 28px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  @media (max-width:760px){.hero .wrap{grid-template-columns:1fr}}
+  .logo{display:inline-block;font-weight:800;letter-spacing:.16em;font-size:.78rem;color:var(--berry);border:1.5px solid var(--rose);border-radius:999px;padding:5px 14px;margin-bottom:16px;background:#fff}
+  h1{font-size:clamp(1.9rem,5.6vw,2.9rem);line-height:1.3;margin:0 0 12px;letter-spacing:.01em}
+  .lead{font-size:clamp(1rem,2.6vw,1.12rem);color:#4a4767;margin:0 0 22px;max-width:30em}
+  .cta{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:18px;padding:14px 22px;font-weight:800;font-size:1.05rem;box-shadow:0 14px 34px rgba(230,63,109,.28);transition:transform .15s}
+  .cta:hover{transform:translateY(-2px)}
+  .cta small{display:block;font-weight:500;font-size:.72rem;opacity:.8;line-height:1.3}
+  .note{font-size:.82rem;color:var(--sub);margin:10px 0 0}
+  .phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/19.5;border-radius:40px;background:#111;padding:10px;box-shadow:0 30px 60px rgba(27,20,64,.28)}
+  .phone video{width:100%;height:100%;object-fit:cover;border-radius:32px;display:block;background:#fbd0dd}
+  section{padding:46px 0}
+  h2{font-size:clamp(1.3rem,3.6vw,1.7rem);margin:0 0 6px}
+  .sub{color:var(--sub);margin:0 0 24px}
+  .perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .perk{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px;position:relative}
+  .perk .n{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--rose);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .perk h3{margin:6px 0 6px;font-size:1.02rem}
+  .perk p{margin:0;color:#4a4767;font-size:.92rem}
+  .deadline{display:inline-block;background:var(--berry);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.85rem;margin-bottom:12px}
+  .gallery{display:flex;gap:14px;overflow-x:auto;padding:6px 0 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .gallery img{flex:0 0 auto;width:min(260px,70vw);border-radius:22px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(27,20,64,.14)}
+  .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .feat{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px}
+  .feat h3{margin:0 0 6px;font-size:1rem}
+  .feat p{margin:0;color:#4a4767;font-size:.92rem}
+  .cta-band{background:linear-gradient(135deg,var(--rose),var(--berry));color:#fff;text-align:center;padding:44px 20px;border-radius:28px;margin:10px 0 0}
+  .cta-band h2{color:#fff;margin-bottom:6px}
+  .cta-band p{margin:0 0 20px;opacity:.95}
+  .cta-band .cta{background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+  .safe{font-size:.86rem;color:var(--sub)}
+  footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--sub);font-size:.84rem}
+  footer a{color:var(--sub)}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <!-- ライブ会場に浮かぶ風船。アプリの「カラフル」きせかえと同じ色 -->
-  <div class="orb" style="width:260px;height:260px;left:-70px;top:-60px;background:var(--blue)"></div>
-  <div class="orb" style="width:150px;height:150px;right:-30px;top:20px;background:var(--amber)"></div>
-  <div class="orb" style="width:190px;height:190px;right:14%;bottom:-70px;background:var(--purple)"></div>
-  <div class="orb" style="width:120px;height:120px;left:18%;bottom:-30px;background:var(--green)"></div>
-  <div class="orb" style="width:100px;height:100px;left:46%;top:-30px;background:var(--red)"></div>
   <div class="wrap">
-    <span class="logo">PINSHARE</span>
-    <h1>行ってよかった場所を、<br>地図に残す。</h1>
-    <p class="lead">押すだけで盛れる写真加工と、行くたびに育つ私だけの地図。<br>
-      場所を知られたくない日は「仮想シティ」へ。</p>
-
-    <div class="dl">
-      <div class="badges">
-        <a class="badge" href="https://apps.apple.com/jp/app/id6794821444">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.5zM14.5 5.4c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
-          <span>App Store で入手<small>iPhone・iPad／無料・2.0 公開中</small></span>
-        </a>
-        <span class="badge soon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1 9.3-9.3v-.2L3.6 2.3zM16.6 15.2l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1 .6 1 1.6 0 2.2l-3.8 2zM15.9 15.9L12.7 12.7 3.4 22c.4.4 1 .4 1.7 0l10.8-6.1zM15.9 8.1L5.1 2c-.7-.4-1.3-.4-1.7 0l9.3 9.3 3.2-3.2z"/></svg>
-          <span>Google Play<small>Android版は準備中です</small></span>
-        </span>
-      </div>
-      <div class="qr">
-        <!-- スマホで読み取ると、このページが開いてそのままインストールへ進める -->
-        <img src="img/qr.svg" alt="このページのQRコード" width="132" height="132" style="display:block;width:132px;height:132px">
-        <span>スマホで読み取る</span>
-      </div>
+    <div>
+      <span class="logo">PINSHARE</span>
+      <h1>行ってよかった場所を、<br>地図に残す。</h1>
+      <p class="lead">同じ趣味のピン友と「今日の1枚」を見せ合い、行くたびに自分の地図が育つ写真SNS。盛れる加工もアプリの中で全部。</p>
+      <a class="cta" href="https://apps.apple.com/jp/app/id6794821444">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.5zM14.5 5.4c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+        <span>App Store で無料ダウンロード<small>iPhone・iPad／課金なし・登録1分</small></span>
+      </a>
+      <p class="note">Android 版は準備中です。</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <video src="img/reel.mp4" autoplay muted loop playsinline poster="img/store/01.jpg"></video>
     </div>
   </div>
 </header>
 
 <main>
 <section class="wrap" id="founders">
-  <h2>先行メンバー特典（2026年12月31日まで）</h2>
+  <span class="deadline">先行メンバー特典：2026年12月31日まで</span>
+  <h2>今、入ると得します。</h2>
   <p class="sub">先に始めた人ほど得をする作りにしています。</p>
-  <div class="feats">
-    <div class="feat"><h3><span class="dot" style="background:var(--red)"></span>① 好きな @ID は早い者勝ち</h3><p>登録時に決める @ID は、同じものは二つ取れません。好きな名前が空いているのは今だけです。</p></div>
-    <div class="feat"><h3><span class="dot" style="background:var(--amber)"></span>② 創設メンバーのバッジ</h3><p>2026年12月31日までに登録した人のプロフィールに、創設メンバーの印をずっと表示します（次のアップデートで実装予定）。</p></div>
-    <div class="feat"><h3><span class="dot" style="background:var(--purple)"></span>③ 投稿を売れる日が来たら、手数料 0%</h3><p>投稿やルートに値段を付けて売れる機能を準備中です。創設メンバーは 2027年いっぱい、アプリの手数料をゼロにします（予定。Apple／Google の手数料は別途）。</p></div>
-    <div class="feat"><h3><span class="dot" style="background:var(--green)"></span>④ 先に始めた人ほど目立つ</h3><p>ピン・ルート・ピン友グループのおすすめは、育っているものから順に並びます。早く始めるほど上に来ます。</p></div>
+  <div class="perks">
+    <div class="perk"><span class="n">1</span><h3>好きな @ID は早い者勝ち</h3><p>同じ @ID は二つ取れません。好きな名前が空いているのは今だけ。</p></div>
+    <div class="perk"><span class="n">2</span><h3>創設メンバーのバッジが一生残る</h3><p>12月31日までに登録した人のプロフィールに、創設メンバーの印をずっと表示します（次のアップデートで実装予定）。</p></div>
+    <div class="perk"><span class="n">3</span><h3>投稿を売れる日が来たら、手数料 0%</h3><p>投稿やルートに値段を付けて売れる機能を準備中。創設メンバーは 2027年いっぱい、アプリの手数料ゼロ（予定・Apple／Google の手数料は別）。</p></div>
+    <div class="perk"><span class="n">4</span><h3>先に始めた人ほど目立つ</h3><p>ピン・ルート・ピン友のおすすめは、育っているものから順に並びます。</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>アプリの画面</h2>
+  <p class="sub">横にスワイプで見られます。</p>
+  <div class="gallery">
+    <img src="img/store/01.jpg" alt="ピン友が、ひとつの画面に" loading="lazy">
+    <img src="img/store/02.jpg" alt="好きなことで、つながる" loading="lazy">
+    <img src="img/store/03.jpg" alt="行ってよかった場所が、私の地図になる" loading="lazy">
+    <img src="img/store/04.jpg" alt="巡るコースは、ルートにして歩ける" loading="lazy">
+    <img src="img/store/05.jpg" alt="盛れる加工は、アプリの中で全部" loading="lazy">
+    <img src="img/store/06.jpg" alt="場所は見せたい人にだけ" loading="lazy">
   </div>
 </section>
 
 <section class="wrap">
   <h2>できること</h2>
-  <p class="sub">「撮る・盛る・残す」がひとつのアプリで終わります。</p>
+  <p class="sub">撮る・盛る・残す・つながるが、ひとつのアプリで。</p>
   <div class="feats">
-    <div class="feat">
-      <h3><span class="dot" style="background:var(--red)"></span>押すだけで盛れる</h3>
-      <p>気に入った加工は「マイ設定」に名前を付けて保存。次の写真も1タップで同じ仕上がりに。美肌・メイク・小顔・背景ぼかし、天使の羽やピアスは顔に合わせて自動で乗ります。</p>
-    </div>
-    <div class="feat">
-      <h3><span class="dot" style="background:var(--blue)"></span>私だけの地図が育つ</h3>
-      <p>行った場所にピンを立てて写真と一緒に残すと、自分だけの地図ができていきます。カフェ巡りも聖地巡礼も、行くほど濃くなります。</p>
-    </div>
-    <div class="feat">
-      <h3><span class="dot" style="background:var(--purple)"></span>家バレせずに載せられる</h3>
-      <p>場所を出したくない投稿は「仮想シティ」へ。架空の街に置かれ、実際の位置は出ません。写真の位置情報も保存時に取り除いています。</p>
-    </div>
-    <div class="feat">
-      <h3><span class="dot" style="background:var(--green)"></span>音の鳴らないカメラ</h3>
-      <p>フィルターを見ながら、シャッター音を出さずに撮れます。静かなカフェでも気兼ねなく。撮ったらそのまま加工へ。</p>
-    </div>
-    <div class="feat">
-      <h3><span class="dot" style="background:var(--amber)"></span>巡るコースを組む</h3>
-      <p>お店やピンを並べて、滞在時間つきの行程表に。歩きナビで「いま何番目か」を見ながら巡れます。</p>
-    </div>
-    <div class="feat">
-      <h3><span class="dot" style="background:var(--cyan)"></span>ピン友と今日の1枚</h3>
-      <p>同じ趣味・同じ推しのピン友グループを作ると、離れていてもみんなの「今日の1枚」がひとつの画面に。おすすめのお店や聖地の情報も共有できます。</p>
-    </div>
+    <div class="feat"><h3>🌸 ピン友と今日の1枚</h3><p>推し活、カフェ巡り、部活…同じ趣味のグループを作ると、離れていてもみんなの今日の1枚がひとつの画面に。おすすめのお店や聖地の情報も共有。</p></div>
+    <div class="feat"><h3>📍 私だけの地図が育つ</h3><p>地図を長押ししてピン。お店の名前を打つだけで近くのお店が候補に（「スタバ」でもOK）。行くほど地図が濃くなります。</p></div>
+    <div class="feat"><h3>✨ 押すだけで盛れる</h3><p>美肌・メイク・小顔・背景ぼかし・スタンプ。気に入った加工は「マイ設定」に保存して、次の写真も1タップで同じ仕上がり。</p></div>
+    <div class="feat"><h3>🔕 音の鳴らないカメラ</h3><p>仕上がりを見ながら、シャッター音を出さずに撮れます。撮ったらそのまま加工へ。</p></div>
+    <div class="feat"><h3>🗺️ ルートを作って歩く</h3><p>行きたい場所をつないでコースに。「検索して作る」なら行き先を入れるだけで提案。海外旅行の遠い区間も目安時間つき。</p></div>
+    <div class="feat"><h3>🔒 場所は見せたい人にだけ</h3><p>投稿ごとに「正確／エリアだけ／非表示」。場所を出したくない日は「仮想シティ」へ。写真の位置情報は保存時に取り除きます。</p></div>
   </div>
 </section>
 
 <section class="wrap">
-  <h2>画面</h2>
-  <p class="sub">実際のアプリの画面です。</p>
-  <div class="shots">
-    <figure><img src="img/shot-beauty.jpg" alt="加工前と加工後を並べた画面" loading="lazy">
-      <figcaption>押すだけで、盛れる</figcaption></figure>
-    <figure><img src="img/shot-stamp.jpg" alt="天使の羽のスタンプを付けた画面" loading="lazy">
-      <figcaption>羽もピアスも顔に自動で</figcaption></figure>
-    <figure><img src="img/shot-map.jpg" alt="ピンがたくさん立った地図" loading="lazy">
-      <figcaption>行った場所が地図になる</figcaption></figure>
-    <figure><img src="img/shot-virtual.jpg" alt="仮想シティへの投稿画面" loading="lazy">
-      <figcaption>家バレせずに載せられる</figcaption></figure>
+  <div class="cta-band">
+    <h2>無料で、1分で始められます。</h2>
+    <p>App Store で「PinShare」と検索、またはここから。</p>
+    <a class="cta" href="https://apps.apple.com/jp/app/id6794821444"><span>App Store で無料ダウンロード<small>iPhone・iPad</small></span></a>
   </div>
-</section>
-
-<section class="wrap">
-  <div class="safe">
-    <h2 style="margin-top:0">安心して使うために</h2>
-    <ul>
-      <li>投稿の公開範囲は選べます。既定は「自分だけ」です。</li>
-      <li>すべての投稿に通報機能、相手のブロック・ミュートがあります。</li>
-      <li>写真の位置情報（Exif）は保存時に取り除いています。</li>
-      <li>写真の加工は端末の中だけで完結します（顔を見つける処理も端末内です）。</li>
-    </ul>
-    <p style="margin:16px 0 0;font-size:.9rem">
-      <a href="https://tak20250211-cyber.github.io/pinshare-legal/">プライバシーポリシー</a>
-      <a href="https://tak20250211-cyber.github.io/pinshare-legal/terms.html">利用規約</a>
-    </p>
-  </div>
+  <p class="safe" style="margin-top:22px">投稿の公開範囲は選べます（既定は自分だけ）。すべての投稿に通報・ブロック・ミュートがあります。写真の加工は端末の中だけで完結します。
+    <a href="https://tak20250211-cyber.github.io/pinshare-legal/">プライバシーポリシー</a> ／
+    <a href="https://tak20250211-cyber.github.io/pinshare-legal/terms.html">利用規約</a></p>
 </section>
 </main>
 
