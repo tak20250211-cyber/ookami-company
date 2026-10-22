@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PinShare — 좋았던 장소를 나만의 지도에 핀으로 남기는 사진 SNS</title>
+<meta name="description" content="같은 취미의 핀친구와 오늘의 한 장을 공유하고, 다녀온 장소가 지도에 쌓여요. 뷰티 보정도 앱 안에서 전부. iPhone 무료.">
+<link rel="canonical" href="https://ookamicompany.com/pinshare/ko/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PinShare — 좋았던 장소를 나만의 지도에 핀으로">
+<meta property="og:description" content="지금 가입하면 이득. 원하는 @ID 선착순, 창립 멤버 배지, 유료 게시물 기능 출시 시 앱 수수료 0%(예정).">
+<meta property="og:url" content="https://ookamicompany.com/pinshare/ko/">
+<meta property="og:image" content="https://ookamicompany.com/pinshare/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f27a9e">
+<style>
+  :root{--rose:#f27a9e;--berry:#e63f6d;--blush:#fde2ea;--pink:#fbd0dd;--ink:#1b1440;--sub:#6a6785;--line:#f1dbe3;--card:#fff;--radius:22px}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;color:var(--ink);background:#fff7fa;line-height:1.8;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--berry)}
+  .hero{background:linear-gradient(180deg,#ffe3ec 0%,#fff7fa 100%);padding:36px 0 28px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  @media (max-width:760px){.hero .wrap{grid-template-columns:1fr}}
+  .logo{display:inline-block;font-weight:800;letter-spacing:.16em;font-size:.78rem;color:var(--berry);border:1.5px solid var(--rose);border-radius:999px;padding:5px 14px;margin-bottom:16px;background:#fff}
+  h1{font-size:clamp(1.75rem,7.2vw,2.9rem);line-height:1.3;margin:0 0 12px;letter-spacing:0}
+  .lead{font-size:clamp(1rem,2.6vw,1.12rem);color:#4a4767;margin:0 0 22px;max-width:30em}
+  .cta{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:18px;padding:14px 22px;font-weight:800;font-size:1.05rem;white-space:nowrap;box-shadow:0 14px 34px rgba(230,63,109,.28);transition:transform .15s}
+  .cta:hover{transform:translateY(-2px)}
+  .cta small{display:block;font-weight:500;font-size:.72rem;opacity:.8;line-height:1.3}
+  .note{font-size:.82rem;color:var(--sub);margin:10px 0 0}
+  .phone{justify-self:center;width:min(300px,62vw);aspect-ratio:9/19.5;border-radius:40px;background:#111;padding:10px;box-shadow:0 30px 60px rgba(27,20,64,.28)}
+  .phone video{width:100%;height:100%;object-fit:cover;border-radius:32px;display:block;background:#fbd0dd}
+  section{padding:46px 0}
+  h2{font-size:clamp(1.3rem,3.6vw,1.7rem);margin:0 0 6px}
+  .sub{color:var(--sub);margin:0 0 24px}
+  .perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .perk{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px;position:relative}
+  .perk .n{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--rose);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .perk h3{margin:6px 0 6px;font-size:1.02rem}
+  .perk p{margin:0;color:#4a4767;font-size:.92rem}
+  .deadline{display:inline-block;background:var(--berry);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.85rem;margin-bottom:12px}
+  .gallery{display:flex;gap:14px;overflow-x:auto;padding:6px 0 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .gallery img{flex:0 0 auto;width:min(260px,70vw);border-radius:22px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(27,20,64,.14)}
+  .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .feat{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px}
+  .feat h3{margin:0 0 6px;font-size:1rem}
+  .feat p{margin:0;color:#4a4767;font-size:.92rem}
+  .cta-band{background:linear-gradient(135deg,var(--rose),var(--berry));color:#fff;text-align:center;padding:44px 20px;border-radius:28px;margin:10px 0 0}
+  .cta-band h2{color:#fff;margin-bottom:6px}
+  .cta-band p{margin:0 0 20px;opacity:.95}
+  .cta-band .cta{background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+  .safe{font-size:.86rem;color:var(--sub)}
+  footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--sub);font-size:.84rem}
+  footer a{color:var(--sub)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="logo">PINSHARE</span> <span style="font-size:.8rem;color:var(--sub)"><a href="../">日本語</a> ／ <a href="../en/">English</a> ／ <a href="../ko/">한국어</a></span>
+      <h1>좋았던 장소를,<br>지도에 남기다.</h1>
+      <p class="lead">같은 취미의 핀친구와 「오늘의 한 장」을 나누고, 갈 때마다 나만의 지도가 자라는 사진 SNS. 뷰티 보정도 앱 안에서 전부.</p>
+      <a class="cta" href="https://apps.apple.com/jp/app/id6794821444">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.5zM14.5 5.4c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+        <span>무료 다운로드<small>App Store · iPhone · 가입 1분</small></span>
+      </a>
+      <p class="note">Android 버전은 준비 중입니다.</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <video src="../img/reel.mp4" autoplay muted loop playsinline poster="../img/store/01.jpg"></video>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="wrap" id="founders">
+  <span class="deadline">얼리 멤버 혜택: 2026년 12월 31일까지</span>
+  <h2>지금 가입하면 이득입니다.</h2>
+  <p class="sub">먼저 시작한 사람이 더 이득을 보도록 만들었어요.</p>
+  <div class="perks">
+    <div class="perk"><span class="n">1</span><h3>원하는 @ID는 선착순</h3><p>같은 @ID는 둘이 가질 수 없어요. 원하는 이름이 비어 있는 건 지금뿐.</p></div>
+    <div class="perk"><span class="n">2</span><h3>창립 멤버 배지가 평생 남아요</h3><p>12월 31일까지 가입한 분의 프로필에 창립 멤버 표시를 계속 보여드려요(다음 업데이트에서 적용 예정).</p></div>
+    <div class="perk"><span class="n">3</span><h3>게시물 판매 기능 출시 시 수수료 0%</h3><p>게시물과 루트에 가격을 붙여 판매하는 기능을 준비 중. 창립 멤버는 2027년 내내 앱 수수료 0%(예정 · Apple/Google 수수료 별도).</p></div>
+    <div class="perk"><span class="n">4</span><h3>먼저 시작할수록 눈에 띄어요</h3><p>핀·루트·핀친구 추천은 많이 자란 순서로 정렬돼요.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>앱 화면</h2>
+  <p class="sub">옆으로 넘겨서 보세요.</p>
+  <div class="gallery">
+    <img src="../img/store/01.jpg" alt="ピン友が、ひとつの画面に" loading="lazy">
+    <img src="../img/store/02.jpg" alt="好きなことで、つながる" loading="lazy">
+    <img src="../img/store/03.jpg" alt="行ってよかった場所が、私の地図になる" loading="lazy">
+    <img src="../img/store/04.jpg" alt="巡るコースは、ルートにして歩ける" loading="lazy">
+    <img src="../img/store/05.jpg" alt="盛れる加工は、アプリの中で全部" loading="lazy">
+    <img src="../img/store/06.jpg" alt="場所は見せたい人にだけ" loading="lazy">
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>할 수 있는 것</h2>
+  <p class="sub">찍고, 보정하고, 남기고, 이어지는 것까지 한 앱에서.</p>
+  <div class="feats">
+    <div class="feat"><h3>🌸 핀친구와 오늘의 한 장</h3><p>덕질, 카페 투어, 동아리… 같은 취미의 그룹을 만들면 멀리 있어도 모두의 오늘 한 장이 한 화면에. 추천 가게와 성지 정보도 공유.</p></div>
+    <div class="feat"><h3>📍 나만의 지도가 자라요</h3><p>지도를 길게 눌러 핀. 가게 이름만 입력하면 근처 가게가 후보로. 갈수록 지도가 진해져요.</p></div>
+    <div class="feat"><h3>✨ 한 번에 예쁘게</h3><p>피부·메이크업·얼굴 축소·배경 흐림·스티커. 마음에 드는 보정은 「내 설정」에 저장해 다음 사진도 한 번에 같은 느낌으로.</p></div>
+    <div class="feat"><h3>🔕 무음 카메라</h3><p>결과를 보면서 셔터음 없이 촬영. 찍은 뒤 바로 보정으로.</p></div>
+    <div class="feat"><h3>🗺️ 루트를 만들어 걷기</h3><p>가고 싶은 곳을 이어 코스로. 「검색해서 만들기」는 목적지만 넣으면 제안해요. 먼 구간은 비행기·열차 예상 시간 표시.</p></div>
+    <div class="feat"><h3>🔒 위치는 보여주고 싶은 사람에게만</h3><p>게시물마다 「정확히/지역만/숨김」. 위치를 알리고 싶지 않은 날은 「가상 시티」로. 사진의 위치 정보는 저장 시 제거.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cta-band">
+    <h2>무료, 1분이면 시작.</h2>
+    <p>App Store에서 「PinShare」를 검색하거나 아래에서.</p>
+    <a class="cta" href="https://apps.apple.com/jp/app/id6794821444"><span>무료 다운로드<small>App Store · iPhone</small></span></a>
+  </div>
+  <p class="safe" style="margin-top:22px">게시물 공개 범위는 선택할 수 있어요(기본은 나만). 모든 게시물에 신고·차단·뮤트가 있어요. 사진 보정은 기기 안에서만 처리돼요.
+    <a href="https://tak20250211-cyber.github.io/pinshare-legal/">개인정보 처리방침</a> /
+    <a href="https://tak20250211-cyber.github.io/pinshare-legal/terms.html">이용약관</a></p>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>PinShare는 <a href="/">Ookami Company</a>가 개발·운영합니다.<br>
+  문의: <a href="mailto:info@ookamicompany.com">info@ookamicompany.com</a></p>
+</footer>
+
+</body>
+</html>
