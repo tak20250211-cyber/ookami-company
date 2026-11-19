@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PinShare — Pin the places you loved, on your own map</title>
-<meta name="description" content="Share today's one photo with Pin Friends who love what you love. Your map grows with every place you visit. Beauty editing built in. Free on iPhone.">
+<title>PinShare — Your places, ranked. Restaurant rankings and map search</title>
+<meta name="description" content="Just pick which place you would visit again. PinShare builds your rankings by genre, shows the top 5 by area, and helps you find the next spot on the map. Free on iPhone and Android.">
 <link rel="canonical" href="https://ookamicompany.com/pinshare/en/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PinShare — Pin the places you loved, on your own map">
-<meta property="og:description" content="Join early: claim your @ID first, get the Founding Member badge, and 0% app fee when paid posts launch (planned).">
+<meta property="og:title" content="PinShare — Your places, ranked. Restaurant rankings and map search">
+<meta property="og:description" content="Compare two places, and your ranking builds itself. Map search, route suggestions and trip plans included.">
 <meta property="og:url" content="https://ookamicompany.com/pinshare/en/">
 <meta property="og:image" content="https://ookamicompany.com/pinshare/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f27a9e">
+<meta name="theme-color" content="#14203a">
 <style>
   :root{--rose:#f27a9e;--berry:#e63f6d;--blush:#fde2ea;--pink:#fbd0dd;--ink:#1b1440;--sub:#6a6785;--line:#f1dbe3;--card:#fff;--radius:22px}
   *{box-sizing:border-box}
@@ -53,6 +53,20 @@
   .safe{font-size:.86rem;color:var(--sub)}
   footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--sub);font-size:.84rem}
   footer a{color:var(--sub)}
+
+  /* 3.0：アプリと同じ 紺の地・白い字・差し色コーラル（2026-11-19） */
+  :root{--rose:#f2725f;--berry:#f2725f;--ink:#eef1f8;--sub:#a9b4cf;--line:#2a3a63;--card:#18254a}
+  body{background:#0f1830;color:var(--ink)}
+  a{color:#ff9483}
+  .hero{background:linear-gradient(180deg,#1b2a4a 0%,#0f1830 100%)}
+  .logo{background:transparent;color:#ff9483;border-color:#f2725f}
+  .lead,.perk p,.feat p{color:#c9d2e6}
+  .cta{background:#f2725f;color:#fff;box-shadow:0 14px 34px rgba(242,114,95,.32)}
+  .phone{background:#0c1325;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+  .phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:32px;display:block}
+  .gallery img{box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .cta-band{background:linear-gradient(135deg,#f2725f,#d9523d)}
+  .cta-band .cta{background:#fff;color:#14203a}
 </style>
 </head>
 <body>
@@ -61,17 +75,18 @@
   <div class="wrap">
     <div>
       <span class="logo">PINSHARE</span> <span style="font-size:.8rem;color:var(--sub)"><a href="../">日本語</a> ／ <a href="../en/">English</a> ／ <a href="../ko/">한국어</a></span>
-      <h1>Pin the places<br>you loved.</h1>
-      <p class="lead">A photo SNS where you share today's one photo with Pin Friends who love what you love, and your own map grows with every place you go. Beauty editing is built in.</p>
+      <h1>Your places,<br>ranked.</h1>
+      <p class="lead">Just answer “Which would you visit again?” Top 5 by area and genre, map search for your next spot, and route suggestions — all in one app.</p>
       <a class="cta" href="https://apps.apple.com/jp/app/id6794821444">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.5zM14.5 5.4c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
         <span>Download free<small>App Store · iPhone · 1-minute sign-up</small></span>
       </a>
-      <p class="note" style="font-weight:700;color:#e63f6d">Note: the app's screens are mostly in Japanese right now. English is being added step by step.</p>
-      <p class="note">Android version coming soon.</p>
+      <p class="note">This page describes the latest version (2.0.3). Store updates can take a few days to reach you.</p>
+      <p class="note">From 2.0.3 the app is available in 8 languages. Screens below are shown in Japanese.</p>
+      <p class="note">Android: available on <a href="https://play.google.com/store/apps/details?id=com.tujitani.pinshare_flutter">Google Play</a> (Japan).</p>
     </div>
     <div class="phone" aria-hidden="true">
-      <video src="../img/reel.mp4" autoplay muted loop playsinline poster="../img/store/01.jpg"></video>
+      <img src="../img/hero3.jpg" alt="">
     </div>
   </div>
 </header>
@@ -93,25 +108,25 @@
   <h2>Screens</h2>
   <p class="sub">Swipe sideways.</p>
   <div class="gallery">
-    <img src="../img/store/01.jpg" alt="ピン友が、ひとつの画面に" loading="lazy">
-    <img src="../img/store/02.jpg" alt="好きなことで、つながる" loading="lazy">
-    <img src="../img/store/03.jpg" alt="行ってよかった場所が、私の地図になる" loading="lazy">
-    <img src="../img/store/04.jpg" alt="巡るコースは、ルートにして歩ける" loading="lazy">
-    <img src="../img/store/05.jpg" alt="盛れる加工は、アプリの中で全部" loading="lazy">
-    <img src="../img/store/06.jpg" alt="場所は見せたい人にだけ" loading="lazy">
+    <img src="../img/store3/01.jpg" alt="Your places, ranked" loading="lazy">
+    <img src="../img/store3/02.jpg" alt="“Which would you visit again?” decides the order" loading="lazy">
+    <img src="../img/store3/03.jpg" alt="Places you visited become your map" loading="lazy">
+    <img src="../img/store3/04.jpg" alt="Find the next spot on the map" loading="lazy">
+    <img src="../img/store3/05.jpg" alt="Let the app plan the route" loading="lazy">
+    <img src="../img/store3/06.jpg" alt="Shoot, edit and post" loading="lazy">
   </div>
 </section>
 
 <section class="wrap">
   <h2>What you can do</h2>
-  <p class="sub">Shoot, enhance, keep and connect, all in one app.</p>
+  <p class="sub">Compare, keep, find and tour — in one app.</p>
   <div class="feats">
-    <div class="feat"><h3>🌸 Today's one photo with Pin Friends</h3><p>Make a group around what you love (fandom, cafés, clubs) and everyone's photo of the day shows up on one screen, even far apart. Share favorite spots and info too.</p></div>
-    <div class="feat"><h3>📍 Your own map grows</h3><p>Long-press the map to pin. Type a shop name and nearby matches appear. The more you go, the richer your map.</p></div>
-    <div class="feat"><h3>✨ One-tap beauty</h3><p>Skin, makeup, face slimming, background blur, stickers. Save a look as "My Preset" and apply it to the next photo in one tap.</p></div>
-    <div class="feat"><h3>🔕 Silent camera</h3><p>See the finished look while you shoot, with no shutter sound. Go straight to editing.</p></div>
-    <div class="feat"><h3>🗺️ Build a route and walk it</h3><p>Connect places into a course. "Search to build" suggests a plan from just a destination. Long legs get flight and train estimates.</p></div>
-    <div class="feat"><h3>🔒 Show location only to who you choose</h3><p>Per post: exact, area only, or hidden. Post to the "Virtual City" when you don't want to reveal where. Photo GPS data is stripped on save.</p></div>
+    <div class="feat"><h3>🏆 Rankings by comparing</h3><p>After posting, just answer “Which would you visit again?” No scores to think about — your order sorts itself out.</p></div>
+    <div class="feat"><h3>🥇 Top 5 by area and genre</h3><p>Pick an area and a genre to see the top 5. Switch between everyone, people you follow, and your own ranking.</p></div>
+    <div class="feat"><h3>📍 Your own map</h3><p>Places you visited stay on the map as photo pins. Filter by genre, or show only your top picks.</p></div>
+    <div class="feat"><h3>🔎 Find the next spot</h3><p>Search shops on the map by place name or purpose. Add them to a route, and open directions in Google Maps.</p></div>
+    <div class="feat"><h3>🗺️ Routes and trip plans</h3><p>Get a suggested order for the area you are looking at. Build a trip plan from a destination and number of days.</p></div>
+    <div class="feat"><h3>📷 Shoot, edit, post</h3><p>A camera with live filters, text and stickers, plus video trimming and music — all inside the app.</p></div>
   </div>
 </section>
 
