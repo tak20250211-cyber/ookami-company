@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biarylink — Tus días, en un solo libro. Un diario tranquilo, solo de palabras</title>
+<meta name="description" content="Un diario tranquilo, solo de palabras: sin fotos y sin contar «me gusta». Lo que escribes se vuelve tu propio libro, y puedes volver atrás por día, mes y año. Gratis en iPhone y Android.">
+<link rel="canonical" href="https://ookamicompany.com/biarylink/es/">
+<link rel="alternate" hreflang="ja" href="https://ookamicompany.com/biarylink/">
+<link rel="alternate" hreflang="en" href="https://ookamicompany.com/biarylink/en/">
+<link rel="alternate" hreflang="ko" href="https://ookamicompany.com/biarylink/ko/">
+<link rel="alternate" hreflang="es" href="https://ookamicompany.com/biarylink/es/">
+<link rel="alternate" hreflang="x-default" href="https://ookamicompany.com/biarylink/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Biarylink — Tus días, en un solo libro.">
+<meta property="og:description" content="Sin fotos perfectas y sin contar «me gusta». Un diario solo de palabras que puedes empezar con una línea.">
+<meta property="og:url" content="https://ookamicompany.com/biarylink/es/">
+<meta property="og:image" content="https://ookamicompany.com/biarylink/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f1e7">
+<style>
+  :root{--ink:#2b2622;--sub:#7a7067;--paper:#f6f1e7;--card:#fffdf8;--line:#e3d9c8;--accent:#8a5a3c;--radius:20px}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent)}
+  .hero{padding-top:44px;padding-bottom:26px}
+  .logo{display:inline-block;font-family:-apple-system,"Hiragino Sans",sans-serif;font-weight:700;letter-spacing:.18em;font-size:.76rem;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:5px 14px;margin-bottom:18px}
+  h1{font-size:clamp(1.8rem,7vw,2.8rem);line-height:1.4;margin:0 0 14px;font-weight:600}
+  .lead{font-size:clamp(1rem,2.6vw,1.1rem);color:#4d453e;margin:0 0 24px;max-width:30em}
+  .btns{display:flex;flex-wrap:wrap;gap:10px}
+  .cta{display:inline-flex;align-items:center;font-family:-apple-system,"Hiragino Sans",sans-serif;background:var(--ink);color:#fff;text-decoration:none;border-radius:16px;padding:13px 22px;font-weight:700;font-size:1rem}
+  .cta small{display:block;font-weight:500;font-size:.72rem;opacity:.8;line-height:1.3}
+  .cta.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .note{font-family:-apple-system,"Hiragino Sans",sans-serif;font-size:.82rem;color:var(--sub);margin:12px 0 0}
+  section{padding:40px 0}
+  h2{font-size:clamp(1.3rem,3.8vw,1.7rem);margin:0 0 6px;font-weight:600;line-height:1.5}
+  .sub{color:var(--sub);margin:0 0 24px}
+  .tag{display:inline-block;font-family:-apple-system,"Hiragino Sans",sans-serif;background:var(--accent);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.82rem;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px;position:relative}
+  .card .n{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-family:-apple-system,sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .card h3{margin:6px 0 6px;font-size:1.03rem;font-weight:600}
+  .card p{margin:0;color:#4d453e;font-size:.93rem}
+  .gallery{display:flex;gap:14px;overflow-x:auto;padding:6px 0 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .gallery img{flex:0 0 auto;width:min(250px,68vw);border-radius:20px;scroll-snap-align:start;box-shadow:0 10px 26px rgba(43,38,34,.16)}
+  .band{background:var(--ink);color:#fff;text-align:center;padding:40px 20px;border-radius:26px}
+  .band h2{color:#fff}
+  .band p{margin:0 0 18px;opacity:.85}
+  .band .btns{justify-content:center}
+  .band .cta{background:#fff;color:var(--ink)}
+  .band .cta.alt{background:transparent;color:#fff;border-color:#fff}
+  .safe{font-family:-apple-system,"Hiragino Sans",sans-serif;font-size:.85rem;color:var(--sub);margin-top:22px}
+  footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--sub);font-size:.84rem;font-family:-apple-system,"Hiragino Sans",sans-serif}
+  footer a{color:var(--sub)}
+  .langs{font-family:-apple-system,"Hiragino Sans",sans-serif;font-size:.8rem;color:var(--sub);margin-left:8px;white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <span class="logo">BIARYLINK</span> <span class="langs"><a href="../?lang=ja">日本語</a> ／ <a href="../en/">English</a> ／ <a href="../ko/">한국어</a> ／ <a href="../es/">Español</a></span>
+  <h1>Tus días,<br>en un solo libro.</h1>
+  <p class="lead">Un diario tranquilo hecho solo de palabras. Empieza con una línea, y lo que escribes se vuelve tu propio libro.</p>
+  <div class="btns">
+    <a class="cta" href="https://apps.apple.com/app/id6826576139"><span>Descargar en el App Store<small>iPhone</small></span></a>
+    <a class="cta alt" href="https://play.google.com/store/apps/details?id=com.tujitani.diarystrata"><span>Descargar en Google Play<small>Android</small></span></a>
+  </div>
+  <p class="note">Gratis. No necesitas cuenta para empezar. Sin publicidad.</p>
+  <p class="note">La app está disponible en 9 idiomas, incluido el español.</p>
+  <p class="note" id="android-note">Android: por ahora disponible solo en Japón. El lanzamiento mundial está en revisión por Google.</p>
+</header>
+
+<main>
+<section class="wrap" id="why">
+  <span class="tag">Sin fotos. Sin contar «me gusta».</span>
+  <h2>¿Cansado de publicar solo para que te vean?</h2>
+  <p class="sub">Biarylink es un lugar para escribir primero para ti, antes de mostrárselo a nadie.</p>
+  <div class="grid">
+    <div class="card"><span class="n">1</span><h3>Cansado de buscar la foto perfecta</h3><p>La mayoría de los días no traen una foto bonita. Aquí son solo palabras: escribe lo que pasó hoy.</p></div>
+    <div class="card"><span class="n">2</span><h3>No quieres estar pendiente de los «me gusta»</h3><p>Este no es un lugar para competir con números. Tu diario se queda primero en tu teléfono. Después decides si lo compartes.</p></div>
+    <div class="card"><span class="n">3</span><h3>Escribir bien todos los días cuesta</h3><p>Una línea basta, o usa tu voz. Solo los días que puedas. Vuelve atrás por día, mes y año, y sin darte cuenta ya es un libro.</p></div>
+    <div class="card"><span class="n">4</span><h3>Todo es gratis</h3><p>No necesitas cuenta para empezar y no hay publicidad. Prueba escribir primero y sigue si te gusta.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Pantallas</h2>
+  <p class="sub">Desliza hacia los lados para ver más.</p>
+  <div class="gallery">
+    <img src="../img/es/01.jpg" alt="Releer tus días como un solo libro" loading="lazy">
+    <img src="../img/es/02.jpg" alt="El hoy de alguien" loading="lazy">
+    <img src="../img/es/03.jpg" alt="Diario compartido" loading="lazy">
+    <img src="../img/es/04.jpg" alt="Descubrir" loading="lazy">
+    <img src="../img/es/05.jpg" alt="Tu diario se queda en tu teléfono" loading="lazy">
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Lo que puedes hacer</h2>
+  <p class="sub">Escribir, releer y leer el hoy de alguien.</p>
+  <div class="grid">
+    <div class="card"><h3>Escribir</h3><p>Anota el día de hoy, aunque sea en una línea. También puedes escribir con la voz. Tu diario se guarda primero en este teléfono.</p></div>
+    <div class="card"><h3>Releerlo como tu propio libro</h3><p>Elige el color, el diseño y la letra del lomo. Deslízate por día, mes y año para llegar a las entradas antiguas. Pon un marcador y sigue donde quedaste.</p></div>
+    <div class="card"><h3>El hoy de alguien</h3><p>Cuarenta personajes de ficción siguen escribiendo sus diarios: un dependiente nocturno de una tienda, una cuidadora de acuario, un cocinero en la Antártica… Los personajes y sus diarios son ficción, y los diarios están escritos en japonés.</p></div>
+    <div class="card"><h3>Descubrir</h3><p>Muestra personas cuyas palabras se parecen a tu diario y a los diarios que has leído. La comparación se hace solo en tu teléfono.</p></div>
+    <div class="card"><h3>Compartir y conectar</h3><p>Las entradas que compartes con «Todos» pueden leerlas otras personas que hayan iniciado sesión. Puedes seguir, bloquear y denunciar.</p></div>
+    <div class="card"><h3>Lo que cuidamos</h3><p>Puedes exportar tu diario y guardar una copia cuando quieras. Las entradas con cosas que no se pueden decir en voz alta se muestran plegadas por defecto.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="band">
+    <h2>Empieza con la línea de hoy.</h2>
+    <p>Gratis. No necesitas cuenta para empezar.</p>
+    <div class="btns">
+      <a class="cta" href="https://apps.apple.com/app/id6826576139"><span>App Store<small>iPhone</small></span></a>
+      <a class="cta alt" href="https://play.google.com/store/apps/details?id=com.tujitani.diarystrata"><span>Google Play<small>Android</small></span></a>
+    </div>
+  </div>
+  <p class="safe">También funciona en tu navegador: <a href="https://biarylink.ookamicompany.com/">biarylink.ookamicompany.com</a>　／　
+    <a href="https://biarylink.ookamicompany.com/privacy.html">Política de privacidad</a> ／
+    <a href="https://biarylink.ookamicompany.com/terms.html">Términos de uso</a> (ambos en japonés)</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>Biarylink es desarrollada y operada por <a href="/">Ookami Company</a>.<br>
+  Contacto: <a href="mailto:info@ookamicompany.com">info@ookamicompany.com</a></p>
+</footer>
+
+</body>
+</html>

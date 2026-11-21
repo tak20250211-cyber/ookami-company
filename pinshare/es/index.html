@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PinShare — Tus lugares, en un ranking. Rankings de restaurantes y búsqueda en el mapa</title>
+<meta name="description" content="Solo elige a cuál volverías. PinShare arma tus rankings por género, muestra el top 5 por zona y te ayuda a encontrar el próximo lugar en el mapa. Gratis en iPhone y Android.">
+<link rel="canonical" href="https://ookamicompany.com/pinshare/es/">
+<link rel="alternate" hreflang="ja" href="https://ookamicompany.com/pinshare/">
+<link rel="alternate" hreflang="en" href="https://ookamicompany.com/pinshare/en/">
+<link rel="alternate" hreflang="ko" href="https://ookamicompany.com/pinshare/ko/">
+<link rel="alternate" hreflang="es" href="https://ookamicompany.com/pinshare/es/">
+<link rel="alternate" hreflang="x-default" href="https://ookamicompany.com/pinshare/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PinShare — Tus lugares, en un ranking. Rankings de restaurantes y búsqueda en el mapa">
+<meta property="og:description" content="Compara dos lugares y tu ranking se arma solo. Con búsqueda en el mapa, rutas sugeridas y planes de viaje.">
+<meta property="og:url" content="https://ookamicompany.com/pinshare/es/">
+<meta property="og:image" content="https://ookamicompany.com/pinshare/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14203a">
+<style>
+  :root{--rose:#f27a9e;--berry:#e63f6d;--blush:#fde2ea;--pink:#fbd0dd;--ink:#1b1440;--sub:#6a6785;--line:#f1dbe3;--card:#fff;--radius:22px}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;color:var(--ink);background:#fff7fa;line-height:1.8;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--berry)}
+  .hero{background:linear-gradient(180deg,#ffe3ec 0%,#fff7fa 100%);padding:36px 0 28px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+  @media (max-width:760px){.hero .wrap{grid-template-columns:1fr}}
+  .logo{display:inline-block;font-weight:800;letter-spacing:.16em;font-size:.78rem;color:var(--berry);border:1.5px solid var(--rose);border-radius:999px;padding:5px 14px;margin-bottom:16px;background:#fff}
+  h1{font-size:clamp(1.75rem,7.2vw,2.9rem);line-height:1.3;margin:0 0 12px;letter-spacing:0}
+  .lead{font-size:clamp(1rem,2.6vw,1.12rem);color:#4a4767;margin:0 0 22px;max-width:30em}
+  .cta{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:18px;padding:14px 22px;font-weight:800;font-size:1.05rem;white-space:nowrap;box-shadow:0 14px 34px rgba(230,63,109,.28);transition:transform .15s}
+  .cta:hover{transform:translateY(-2px)}
+  .cta small{display:block;font-weight:500;font-size:.72rem;opacity:.8;line-height:1.3}
+  .note{font-size:.82rem;color:var(--sub);margin:10px 0 0}
+  .phone{justify-self:center;width:min(300px,62vw);aspect-ratio:9/19.5;border-radius:40px;background:#111;padding:10px;box-shadow:0 30px 60px rgba(27,20,64,.28)}
+  .phone video{width:100%;height:100%;object-fit:cover;border-radius:32px;display:block;background:#fbd0dd}
+  section{padding:46px 0}
+  h2{font-size:clamp(1.3rem,3.6vw,1.7rem);margin:0 0 6px}
+  .sub{color:var(--sub);margin:0 0 24px}
+  .perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .perk{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px;position:relative}
+  .perk .n{position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--rose);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .perk h3{margin:6px 0 6px;font-size:1.02rem}
+  .perk p{margin:0;color:#4a4767;font-size:.92rem}
+  .deadline{display:inline-block;background:var(--berry);color:#fff;border-radius:999px;padding:4px 14px;font-weight:700;font-size:.85rem;margin-bottom:12px}
+  .gallery{display:flex;gap:14px;overflow-x:auto;padding:6px 0 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .gallery img{flex:0 0 auto;width:min(260px,70vw);border-radius:22px;scroll-snap-align:start;box-shadow:0 12px 30px rgba(27,20,64,.14)}
+  .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .feat{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 22px}
+  .feat h3{margin:0 0 6px;font-size:1rem}
+  .feat p{margin:0;color:#4a4767;font-size:.92rem}
+  .cta-band{background:linear-gradient(135deg,var(--rose),var(--berry));color:#fff;text-align:center;padding:44px 20px;border-radius:28px;margin:10px 0 0}
+  .cta-band h2{color:#fff;margin-bottom:6px}
+  .cta-band p{margin:0 0 20px;opacity:.95}
+  .cta-band .cta{background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.18)}
+  .safe{font-size:.86rem;color:var(--sub)}
+  footer{border-top:1px solid var(--line);padding:24px 0 60px;color:var(--sub);font-size:.84rem}
+  footer a{color:var(--sub)}
+
+  /* 3.0：アプリと同じ 紺の地・白い字・差し色コーラル（2026-11-19） */
+  :root{--rose:#f2725f;--berry:#f2725f;--ink:#eef1f8;--sub:#a9b4cf;--line:#2a3a63;--card:#18254a}
+  body{background:#0f1830;color:var(--ink)}
+  a{color:#ff9483}
+  .hero{background:linear-gradient(180deg,#1b2a4a 0%,#0f1830 100%)}
+  .logo{background:transparent;color:#ff9483;border-color:#f2725f}
+  .lead,.perk p,.feat p{color:#c9d2e6}
+  .cta{background:#f2725f;color:#fff;box-shadow:0 14px 34px rgba(242,114,95,.32)}
+  .phone{background:#0c1325;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+  .phone img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:32px;display:block}
+  .gallery img{box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .cta-band{background:linear-gradient(135deg,#f2725f,#d9523d)}
+  .cta-band .cta{background:#fff;color:#14203a}
+  .cta2{background:#fff;color:#14203a;border:0;box-shadow:0 14px 34px rgba(0,0,0,.28)}
+  .cta{vertical-align:middle;margin:0 4px 10px 0} /* 横に並ぶときは高さをそろえ、折り返したときだけ上下に間をあける */
+  .cta-band .cta2{background:#14203a;color:#fff;box-shadow:0 14px 34px rgba(0,0,0,.22)} /* 2026-11-20 オーナー「Google Play のボタンが背景と同じ色」：枠だけ（透明）をやめて塗る */
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="logo">PINSHARE</span> <span style="font-size:.8rem;color:var(--sub)"><a href="../">日本語</a> ／ <a href="../en/">English</a> ／ <a href="../ko/">한국어</a> ／ <a href="../es/">Español</a></span>
+      <h1>Tus lugares,<br>en un ranking.</h1>
+      <p class="lead">Solo responde «¿A cuál volverías?». Top 5 por zona y género, búsqueda en el mapa para tu próximo lugar y rutas sugeridas: todo en una app.</p>
+      <a class="cta" href="https://apps.apple.com/app/id6794821444">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.5zM14.5 5.4c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+        <span>Descargar gratis<small>App Store · iPhone · registro en 1 minuto</small></span>
+      </a> <a class="cta cta2" href="https://play.google.com/store/apps/details?id=com.tujitani.pinshare_flutter"><span>Descargar en Google Play<small>Android</small></span></a>
+      <p class="note">Esta página describe la versión más reciente (2.0.4). Las actualizaciones de la tienda pueden tardar unos días en llegarte.</p>
+      <p class="note">Desde la versión 2.0.3 la app está disponible en 8 idiomas, incluido el español. La cámara y el editor de fotos se muestran en japonés.</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <img src="../img/hero3-es.jpg" alt="">
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="wrap" id="why">
+  <span class="deadline">Sin puntos. Sin estrellas.</span>
+  <h2>¿Cansado de elegir por estrellas?</h2>
+  <p class="sub">En PinShare el orden lo decide una sola cosa: ¿volverías?</p>
+  <div class="perks">
+    <div class="perk"><span class="n">1</span><h3>Demasiados lugares con 4,5 estrellas</h3><p>Todos tienen buena nota y aun así no sabes cuál es bueno. Dejamos de mirar las valoraciones de esa manera.</p></div>
+    <div class="perk"><span class="n">2</span><h3>Aburrido de rankings llenos de lugares caros</h3><p>No se ordena por precio ni por fama, sino por dónde quieres volver. La picada de tu barrio puede ser el número uno.</p></div>
+    <div class="perk"><span class="n">3</span><h3>Poner nota es difícil</h3><p>Nadie distingue un 3,8 de un 4,1. Pero «¿este o aquel: a cuál volverías?» se responde al tiro.</p></div>
+    <div class="perk"><span class="n">4</span><h3>Ver todo es gratis</h3><p>Los rankings, el mapa y las rutas son gratis por ahora. Regístrate y empieza de inmediato.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Pantallas</h2>
+  <p class="sub">Desliza hacia los lados.</p>
+  <div class="gallery">
+    <img src="../img/store3/es/01.jpg" alt="Tus lugares, en un ranking" loading="lazy">
+    <img src="../img/store3/es/02.jpg" alt="«¿A cuál volverías?» decide el orden" loading="lazy">
+    <img src="../img/store3/es/03.jpg" alt="Tus visitas se vuelven tu propio mapa" loading="lazy">
+    <img src="../img/store3/es/04.jpg" alt="Busca el próximo lugar en el mapa" loading="lazy">
+    <img src="../img/store3/es/05.jpg" alt="Deja que la app arme la ruta" loading="lazy">
+    <img src="../img/store3/es/06.jpg" alt="Captura, edita y publica" loading="lazy">
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Lo que puedes hacer</h2>
+  <p class="sub">Comparar, guardar, buscar y recorrer: en una sola app.</p>
+  <div class="feats">
+    <div class="feat"><h3>🏆 Rankings comparando</h3><p>Después de publicar, solo responde «¿A cuál volverías?». Sin pensar en notas: el orden se arma solo.</p></div>
+    <div class="feat"><h3>🥇 Top 5 por zona y género</h3><p>Elige una zona y un género para ver el top 5. Cambia entre todos, las personas que sigues, tus grupos y tu propio ranking.</p></div>
+    <div class="feat"><h3>⚖️ Una persona, un voto</h3><p>La nota es el promedio de lo que opinó cada visitante, un voto por persona. Ni los seguidores ni la cantidad de publicaciones cambian el peso de un voto, y publicar muchas veces el mismo lugar cuenta una sola vez.</p></div>
+    <div class="feat"><h3>📍 Tu propio mapa</h3><p>Los lugares que visitaste quedan en el mapa como pines con foto. Filtra por género o muestra solo tus favoritos.</p></div>
+    <div class="feat"><h3>🔎 Encuentra el próximo lugar</h3><p>Busca locales en el mapa por nombre del lugar o por lo que quieres hacer. Añádelos a una ruta y abre cómo llegar en Google Maps.</p></div>
+    <div class="feat"><h3>🗺️ Rutas y planes de viaje</h3><p>Recibe un orden sugerido para la zona que estás mirando. Arma un plan de viaje a partir de un destino y la cantidad de días.</p></div>
+    <div class="feat"><h3>📷 Captura, edita, publica</h3><p>Una cámara con filtros en vivo, texto y stickers, además de recorte de video y música: todo dentro de la app.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cta-band">
+    <h2>Gratis. Empieza en un minuto.</h2>
+    <p>Busca «PinShare» en el App Store o toca aquí abajo.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6794821444"><span>Descargar gratis<small>App Store · iPhone</small></span></a> <a class="cta cta2" href="https://play.google.com/store/apps/details?id=com.tujitani.pinshare_flutter"><span>Descargar en Google Play<small>Android</small></span></a>
+  </div>
+  <p class="safe" style="margin-top:22px">Tú eliges quién ve cada publicación (por defecto: solo tú). Cada publicación se puede denunciar, y puedes bloquear o silenciar. La edición de fotos se hace por completo en tu teléfono.
+    <a href="https://tak20250211-cyber.github.io/pinshare-legal/">Política de privacidad</a> /
+    <a href="https://tak20250211-cyber.github.io/pinshare-legal/terms.html">Términos de uso</a> (ambos en japonés)</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>PinShare es desarrollada y operada por <a href="/">Ookami Company</a>.<br>
+  Contacto: <a href="mailto:info@ookamicompany.com">info@ookamicompany.com</a></p>
+</footer>
+
+</body>
+</html>
